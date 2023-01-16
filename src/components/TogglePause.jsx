@@ -14,8 +14,13 @@ const TogglePause = () => {
   });
 
   return (
-    <button onClick={() => setIsGameRunning(!isGameRunning)}>
-      {isGameRunning ? 'Running' : 'Paused'}
+    <button
+      className={`border rounded-md p-4 ${
+        isGameRunning ? 'bg-green-500' : 'bg-red-500'
+      }`}
+      onClick={() => setIsGameRunning(!isGameRunning)}
+    >
+      {isGameRunning ? 'In Game' : 'Paused'}
     </button>
   );
 };

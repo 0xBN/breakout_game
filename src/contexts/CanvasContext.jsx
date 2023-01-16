@@ -17,8 +17,8 @@ export const CanvasProvider = ({ children }) => {
   const [isPaddleLoaded, setIsPaddleLoaded] = useState(false);
 
   const [bricks, setBricks] = useState([]);
-  const [brickCount, setBrickCount] = useState(1);
-  const [bricksPerRow, setBricksPerRow] = useState(1);
+  const [brickCount, setBrickCount] = useState(24);
+  const [bricksPerRow, setBricksPerRow] = useState(11);
   const [singleBrick, setSingleBrick] = useState({});
   const [isSingleBrickLoaded, setIsSingleBrickLoaded] = useState(false);
   const [player, setPlayer] = useState({});

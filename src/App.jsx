@@ -15,15 +15,14 @@ function App() {
   const { player, canvasSize } = useCanvasContext();
 
   return (
-    <div className='bg-black text-white min-h-screen overflow-clip flex flex-col'>
-      <TogglePause />
+    <div className='bg-black text-white min-h-screen overflow-clip flex flex-col items-center justify-center gap-4'>
+      <h1 className={`font-bold text-4xl`}>BREAKOUT</h1>
       <Board />
-      <div>player: {JSON.stringify(player)}</div>
-      <div>
-        {player.win && (
-          <Confetti width={canvasSize.width} height={canvasSize.height} />
-        )}
-      </div>
+      <TogglePause />
+
+      {player.win && (
+        <Confetti width={canvasSize.width} height={canvasSize.height} />
+      )}
     </div>
   );
 }

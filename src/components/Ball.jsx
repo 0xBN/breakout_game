@@ -12,8 +12,8 @@ const Ball = () => {
   const START_BALL_POSITION = {
     x: 22,
     y: 200,
-    dx: 2,
-    dy: 1,
+    dx: 5,
+    dy: 5,
     rad: 10,
     speed: 10,
   };
