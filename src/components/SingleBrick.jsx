@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useCanvasContext } from '../contexts';
 
 const SingleBrick = () => {
@@ -9,7 +9,6 @@ const SingleBrick = () => {
     setSingleBrick,
     setIsSingleBrickLoaded,
     bricksPerRow,
-    maxCanvas,
   } = useCanvasContext();
 
   useEffect(() => {
@@ -33,9 +32,8 @@ const SingleBrick = () => {
     });
 
     setIsSingleBrickLoaded(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canvasSize, setIsSingleBrickLoaded, setSingleBrick]);
-
-  // console.log(singleBrick.broke === false);
 
   return <div>SingleBrick: {JSON.stringify(singleBrick)}</div>;
 };

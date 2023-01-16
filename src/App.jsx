@@ -1,15 +1,7 @@
-import { useContext } from 'react';
 import { useCanvasContext } from './contexts';
 
 import Confetti from 'react-confetti';
-import {
-  Ball,
-  BallMovement,
-  Board,
-  TogglePause,
-  SingleBrick,
-  Bricks,
-} from './components';
+import { Board, TogglePause } from './components';
 
 function App() {
   const { player, canvasSize } = useCanvasContext();

@@ -1,17 +1,10 @@
-import { useRef, useEffect, useContext } from 'react';
 import { useCanvasContext } from '../contexts';
 
 import { useCanvas, usePaddleMovement } from '../hooks';
 import { Bricks, Ball, Paddle, Player, SingleBrick } from '.';
 
 const Board = () => {
-  const {
-    canvasSize,
-
-    draw,
-    setPaddle,
-    paddle,
-  } = useCanvasContext();
+  const { draw } = useCanvasContext();
 
   const { handlePaddleMouseMovement } = usePaddleMovement();
 

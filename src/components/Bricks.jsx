@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { useCanvasContext } from '../contexts';
-import { SingleBrick } from './';
 
 const Bricks = () => {
   const {
@@ -10,19 +9,13 @@ const Bricks = () => {
     canvasSize,
     singleBrick,
     brickCount,
-    setSingleBrick,
-    isSingleBrickLoaded,
+
     bricksPerRow,
   } = useCanvasContext();
 
-  const [list2, setList2] = useState([]);
-
   useEffect(() => {
-    let testArray = [...Array(3).keys()];
     let list = [];
     let newBrick;
-
-    let customIndex = 0;
 
     if (isNaN(singleBrick.x)) return;
 
@@ -35,16 +28,13 @@ const Bricks = () => {
         newBrick = { ...singleBrick };
 
         newBrick.x += i * (newBrick.width + brickGaps) + brickPadding;
-
         let maxWidth = newBrick.x + newBrick.width;
 
         if (maxWidth > canvasSize.width) {
           newBrick = { ...singleBrick };
-
           newBrick.x +=
             (i % bricksPerRow) * (newBrick.width + brickGaps) + brickPadding;
           newBrick.y += newBrick.height + brickGaps;
-
           list.push(newBrick);
         } else {
           list.push(newBrick);
@@ -54,7 +44,7 @@ const Bricks = () => {
 
     addToList();
     setBricks(list);
-    // console.log(list);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [brickCount, setBricks, singleBrick]);
 
   return (

@@ -1,5 +1,4 @@
 import { createContext, useState, useContext } from 'react';
-import { useDraw } from '../hooks';
 
 const CanvasContext = createContext({});
 
@@ -8,7 +7,6 @@ export const CanvasProvider = ({ children }) => {
 
   const [canvasObject, setCanvasObject] = useState();
   const [canvasSize, setCanvasSize] = useState({});
-  const [canvasSize2, setCanvasSize2] = useState({ width: 600, height: 500 });
   const [context, setContext] = useState();
 
   const [ball, setBall] = useState({});

@@ -1,16 +1,8 @@
-import { useRef, useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import { useCanvasContext } from '../contexts';
 
 const Player = () => {
-  const {
-    canvasSize,
-
-    draw,
-    setPaddle,
-    paddle,
-    player,
-    setPlayer,
-  } = useCanvasContext();
+  const { setPlayer } = useCanvasContext();
   const PLAYER_INITIALIZE = {
     name: 'Guest',
     lives: 5,
@@ -20,8 +12,8 @@ const Player = () => {
   };
 
   useEffect(() => {
-    console.log('initialize player');
     setPlayer(() => PLAYER_INITIALIZE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <div>Player</div>;
 };

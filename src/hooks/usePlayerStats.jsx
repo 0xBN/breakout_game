@@ -1,4 +1,3 @@
-import { useRef, useEffect, useContext } from 'react';
 import { useCanvasContext } from '../contexts';
 
 const usePlayerStats = () => {
@@ -47,7 +46,6 @@ const usePlayerStats = () => {
   };
 
   const updatePlayerLives = () => {
-    console.log('update player lives');
     setPlayer(() => {
       let newPlayer = player;
       newPlayer.lives--;
@@ -65,7 +63,6 @@ const usePlayerStats = () => {
       drawMessage('You Win!');
       setIsGameRunning(false);
     } else if (player.lives === 0) {
-      console.log('lose');
       drawMessage('You Lose...');
       setIsGameRunning(false);
     }

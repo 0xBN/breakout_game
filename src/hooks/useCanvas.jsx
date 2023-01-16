@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useCanvasContext } from '../contexts';
-import { useCanvasSize, useDraw, useSingleBrick } from '../hooks';
+import { useCanvasSize, useDraw } from '../hooks';
 
 const useCanvas = () => {
   const { isGameRunning, setContext, setCanvasObject } = useCanvasContext();
@@ -33,6 +33,7 @@ const useCanvas = () => {
     return () => {
       window.cancelAnimationFrame(animationFrameId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draw, isGameRunning, setContext]);
 
   return canvasRef;
