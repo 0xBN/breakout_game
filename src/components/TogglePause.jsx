@@ -15,7 +15,7 @@ const TogglePause = () => {
 
   return (
     <button
-      className={`border rounded-md p-4 ${
+      className={`border rounded-md px-4 py-2 ${
         isGameRunning ? 'bg-green-500' : 'bg-red-500'
       }`}
       onClick={() => setIsGameRunning(!isGameRunning)}

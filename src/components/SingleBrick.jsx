@@ -9,6 +9,7 @@ const SingleBrick = () => {
     setSingleBrick,
     setIsSingleBrickLoaded,
     bricksPerRow,
+    maxCanvas,
   } = useCanvasContext();
 
   useEffect(() => {

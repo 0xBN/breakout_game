@@ -25,18 +25,14 @@ const usePlayerStats = () => {
       context.fillText('❤', canvasSize.width / 2 + gap, 30);
       gap += 30;
     }
-    // SCORE
-    // context.font = '20px Arial';
-    // context.fillStyle = 'white';
-    // context.fillText(`Score: ${player.score}`, canvasSize.width - 140, 30);
   };
 
-  const drawWin = () => {
+  const drawMessage = (message) => {
     context.clearRect(0, 0, canvasObject.width, canvasObject.height);
     context.font = '50px Arial';
     context.fillStyle = 'white';
     context.fillText(
-      `You Win!`,
+      message,
       canvasSize.width / 2 - 100,
       canvasSize.height / 2
     );
@@ -66,7 +62,11 @@ const usePlayerStats = () => {
         player.win = true;
         return newPlayer;
       });
-      drawWin();
+      drawMessage('You Win!');
+      setIsGameRunning(false);
+    } else if (player.lives === 0) {
+      console.log('lose');
+      drawMessage('You Lose...');
       setIsGameRunning(false);
     }
   };

@@ -12,7 +12,7 @@ const Player = () => {
     setPlayer,
   } = useCanvasContext();
   const PLAYER_INITIALIZE = {
-    name: 'Merlin',
+    name: 'Guest',
     lives: 5,
     score: 0,
     level: 1,

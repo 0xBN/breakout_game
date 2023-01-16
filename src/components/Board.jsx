@@ -22,11 +22,13 @@ const Board = () => {
       id='canvas'
       ref={canvasRef}
       className={`border bg-teal-900 rounded-md`}
-      height={canvasSize.height}
-      width={canvasSize.width < 800 ? canvasSize.width : 800}
-      // onMouseDown={handlePaddleMouseMovement}
+      height='500'
+      width={
+        window.innerWidth < 900
+          ? window.innerWidth - 20
+          : window.innerWidth - (window.innerWidth * 20) / 100
+      }
       onMouseMove={handlePaddleMouseMovement}
-      onTouchStart={handlePaddleMouseMovement}
     >
       <Bricks />
       <SingleBrick />

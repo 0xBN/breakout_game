@@ -1,19 +1,16 @@
-import { useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import { useCanvasContext } from '../contexts';
 
-const useCanvasSize = (setCanvasSize, width, height) => {
+const useCanvasSize = () => {
+  const { setCanvasSize } = useCanvasContext();
   // INITIALIZE CANVAS
   useEffect(() => {
+    let height = 500;
+    let width =
+      window.innerWidth < 900
+        ? window.innerWidth - 20
+        : window.innerWidth - (window.innerWidth * 20) / 100;
     setCanvasSize({ width, height });
-  }, [height, setCanvasSize, width]);
-
-  // HANDLE RESIZE
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setCanvasSize({ width, height });
-    };
-
-    window.addEventListener('resize', handleWindowResize);
-    return () => window.removeEventListener('resize', handleWindowResize);
-  }, [height, setCanvasSize, width]);
+  }, [setCanvasSize]);
 };
 export default useCanvasSize;

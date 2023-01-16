@@ -62,12 +62,13 @@ const useBallMovement = () => {
   };
 
   const ballWallCollision = () => {
+    let newBall = ball;
     setBall(() => {
-      let newBall = ball;
       if (ball.y - ball.rad <= 0) {
         newBall.dy *= -1;
       }
       if (ball.x + ball.rad >= canvasSize.width || ball.x - ball.rad <= 0) {
+        console.log('hit side wall');
         newBall.dx *= -1;
       }
       // BOTTOM WALL OUT OF BOUNDS

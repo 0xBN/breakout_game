@@ -3,11 +3,10 @@ import { useCanvasContext } from '../contexts';
 import { useCanvasSize, useDraw, useSingleBrick } from '../hooks';
 
 const useCanvas = () => {
-  const { isGameRunning, setContext, setCanvasSize, bricks, setCanvasObject } =
-    useCanvasContext();
+  const { isGameRunning, setContext, setCanvasObject } = useCanvasContext();
   const { draw } = useDraw();
 
-  useCanvasSize(setCanvasSize, window.innerWidth - 20, 500);
+  useCanvasSize(window.innerWidth - 20, 500);
 
   const canvasRef = useRef(null);
 

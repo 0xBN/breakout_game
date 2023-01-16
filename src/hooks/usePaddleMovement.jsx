@@ -64,12 +64,11 @@ const usePaddleMovement = () => {
   };
 
   const handlePaddleMouseMovement = (e) => {
-    console.log(e.type);
-    setPaddle((prev) => {
-      let newPaddle = paddle;
-      newPaddle.x = e.clientX - 50;
-      return newPaddle;
-    });
+    paddle.x =
+      e.clientX -
+      (window.innerWidth < 900 ? 10 : (window.innerWidth * 20) / 200) -
+      paddle.width / 2 -
+      10;
   };
 
   return {
